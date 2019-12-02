@@ -1,0 +1,26 @@
+.container-full {
+    width: 100%;
+    }
+
+.pd-left {
+    padding-left: 15px;
+}
+
+.pd-right {
+    padding-right: 15px;
+}
+
+.pd-top {
+    padding-top: 15px;
+}
+
+.pd-bottom {
+    padding-bottom: 15px;
+}
+
+.padding {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
