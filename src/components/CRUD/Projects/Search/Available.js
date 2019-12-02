@@ -19,11 +19,7 @@ const useStyles = makeStyles({
   },
 });
 
-function noResults(){
-    return (
-        <h3>No Results</h3>
-    )
-}
+
 
 export const Available = ({ projects }) => {
   const classes = useStyles();
@@ -68,7 +64,5 @@ export const Available = ({ projects }) => {
     </div>
   )
 }
-function newFunction() {
-    "No Results";
-}
+
 

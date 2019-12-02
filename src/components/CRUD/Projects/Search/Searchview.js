@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import './Searchview.css'
 import {Available} from './Available';
 
+//function 
 
 class Searchview extends Component {
     state = {
@@ -13,8 +14,11 @@ class Searchview extends Component {
         const {id} = this.props.match.params;
         fetch('http://35.223.215.2:5000/projects')
         .then(res => res.json())
-        .then((data) => {
-            if(data.name===id){
+        .then(data => {
+            for(var props in data){
+                if(data[props].name!==id){
+                    delete data[props]
+                }
                 this.setState({projects: data})
             }
         })

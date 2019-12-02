@@ -52,7 +52,6 @@ export const Projects = ({ projects }) => {
                       </Typography>
                       <Typography variant="body2" color="textSecondary" component="p">
                           {project.description}
-                          {project.id}
                       </Typography>
                       </CardContent>
                   </CardActionArea>

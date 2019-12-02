@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Form from 'react-bootstrap/Form'
 import { Button } from '@material-ui/core';
 import { postRegister } from './CRUDFoo';
+import { Redirect } from 'react-router-dom';
 
 class Addproject extends Component {
     constructor(props){
@@ -12,6 +13,7 @@ class Addproject extends Component {
             type: '',
             due_date: '',
             req_collab: 1,
+            redirect: false
         };
     
         this.handleChange = this.handleChange.bind(this);
@@ -26,6 +28,16 @@ class Addproject extends Component {
     handleCancel(){
         window.location.reload();
     }
+    setRedirect = () => {
+        this.setState({
+          redirect: true
+        })
+      }  
+      renderRedirect = () => {
+        if (this.state.redirect) {
+          return <Redirect to='/myproject' />
+        }
+      }
 
     handleSubmit(event){
         event.preventDefault();
@@ -35,6 +47,7 @@ class Addproject extends Component {
             postRegister(this.state.name,this.state.desc,this.state.type,
                 this.state.due_date,
                 this.state.req_collab);
+                setTimeout(() => window.location.reload(), 1000);
         }
     }
 
