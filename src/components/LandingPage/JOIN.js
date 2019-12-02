@@ -14,7 +14,7 @@ class Homepage1 extends Component {
             <h6 className="text-center white-text">
                 Wanna Join?
             </h6>
-          <Searchfield/>
+            <Searchfield/>
         </div>
       </div>
     )

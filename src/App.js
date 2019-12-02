@@ -1,12 +1,12 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom'
-import "./components/Searchview.css"
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import Navbar from './components/Navbar/Navbar'
-import Landing from './components/Landing'
+import Landing from './components/LandingPage/Landing'
 import Register from './components/Register'
 import Login from './components/Login'
-import Searchview from './components/Searchview'
+import Searchview from './components/CRUD/Projects/Search/Searchview'
+import JOIN from './components/LandingPage/JOIN'
 import Profile from './components/Users/Profile'
 import OwnedProject from './components/Users/OwnedProjects'
 import Editprofile from './components/Users/Editprofile'
@@ -20,20 +20,18 @@ function App() {
     <Router>
       <div className="App">
         <Navbar/>
+        <JOIN/>
         <Route exact path="/" component={Landing} />
         <div className="container-full">
-          <Route exact path="/post" component={Post} />
-          <Route exact path="/put" component={Put} />
-          <Route exact path="/delete" component={Delete} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/Searchview" component={Searchview} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/myproject" component={OwnedProject} />
           <Route exact path="/myproject/edit/:id" component={EditProject} />
           <Route exact path="/myproject/delete/:id" component={DeleteProject} />
           <Route exact path="/profile/edit" component={Editprofile} />
           <Route exact path="/users" component={ViewUser} />
+          <Route exact path="/search/:id" component={Searchview} />
         </div>
       </div>
     </Router>
